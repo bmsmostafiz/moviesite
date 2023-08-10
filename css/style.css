@@ -1,5 +1,3 @@
-
-
 * {
   margin: 0;
   padding: 0;
@@ -115,6 +113,21 @@ span.line {
   appearance: none;
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
 
 .main-content {
   background-color: #151617;
@@ -160,7 +173,6 @@ hr {
 }
 
 .movie-item {
-  /* padding: 15px 25px 15px 25px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,7 +194,7 @@ hr {
   transition: all 0.4s ease-in-out;
 }
 
-.items:hover{
+.items:hover {
   border: 6px solid #25e945;
 }
 
@@ -193,7 +205,7 @@ hr {
   display: block;
 }
 
-.image-overlay{
+.image-overlay {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -207,28 +219,29 @@ hr {
   opacity: 0;
 }
 
-.fa-star{
+.fa-star {
   color: #25e945;
   font-size: 18px;
 }
-.rating{
+
+.rating {
   margin-block: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.rating span{
+.rating span {
   font-size: 24px;
   padding: 0 7px;
 }
 
-.generic{
+.generic {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.view-details{
+.view-details {
   margin-top: 10px;
   cursor: pointer;
   background-color: #68BB44;
@@ -241,7 +254,8 @@ hr {
   font-weight: 600;
 }
 
-.items, .image-overlay:hover {
+.items,
+.image-overlay:hover {
   opacity: 1;
 }
 
@@ -260,4 +274,75 @@ hr {
   color: #fff;
   font-size: 13px;
   margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1343px) {
+  .brand span {
+    display: none;
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .has-search {
+    display: none;
+  }
+}
+
+
+
+
+@media (max-width:768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    width: 100%;
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgb(78, 78, 53);
+    text-align: center;
+    transition: 0.3s;
+    top: 58px;
+  }
+
+  .menu-items ul {
+    gap: 0;
+  }
+
+  .line{
+    display: none;
+  }
+
+  .nav-item {
+    margin: 12px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
 }
